@@ -1,68 +1,86 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Social Media Application - Tweet
 
-In the project directory, you can run:
+ In this application, we are using
+	Front End - ReactJs, Redux, Styled Components
+	Back End - ExpressJS
+	Database - Firebase
 
-### `npm start`
+ Backend API's are created using Express JS and uploaded in the Firebase database
+ 
+FrontEnd - Pages
+	1. Login page
+	2. Registration Page
+	3. Dashboard Page - private page - only loggedIn users can see
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+should work on mobile/ipads/desktop
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Registration Page - fields
+	1. Email
+	2. Username
+	3. password
+	4. confirm password
+	5. Register button
+	
+validation for all fields
+password - validation for 8 chars, one caps, one small letter, one special character, one number
+on valid submission - redirect to login page.
+	
+Login Page - fields
+	1. email Id
+	2. Password
+	3. Login button
+	
+validation for both email and password
+on Valid submission - redirect to dashboard page
 
-### `npm test`
+Dashboard page
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+header - fields
+	1. logout button
+	2. Notification button
+	3. add new tweet button
+	3. on Mobile screen only - profile button will be shown
+	
+ Notification button
+	- should be shown on user liking and commenting your post
+	- clicking on the notification will mark it as read
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ Logout button
+	- Redirect to login page
+	
+ add New tweet button
+	- post new tweet to everyone
+	
+ Profile button
+	- shown only on mobile screen size
+	- display the user profile Inof
+	
+body - two sections
+	1. tweets - posted by everyone(left side)
+	2. profile - user Info(right side)
+	
+  tweets section
+	- showing tweets posted by everyone based on recent time(recent tweet posted at the top)
+	- Every tweets has certain fields
+		- user image who has posted the tweet
+		- tweet body
+		- tweet posted time
+		- how many likes
+		- how many comments
+				- clicking on comments will show all the comments posted(popup dialog)
+						- user image who has posted commenting
+						- comment body
+				
+  Profile section
+	- normally shown on right side for desktop screen
+	- clicking profile icon will display the profile at the top before the tweets(for smaller screens - mobile and ipads)
+	
+	fields
+		- User image
+		- bio
+			- bio can be edited by clicking the edit button
+				- small description about user
+				- location
+			
+Backend API's - written and published to firebasae
